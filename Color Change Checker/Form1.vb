@@ -26,6 +26,7 @@ Public Class Form1
 
         AdjustWindows()
 
+
     End Sub
 
     Private Sub AdjustWindows()
@@ -208,15 +209,13 @@ Public Class Form1
 
     Private Function Loopy()
 
-        For i = 0 To Math.Min(ListBox1.Items.Count, ListBox2.Items.Count) - 1
-            'MsgBox(ListBox1.Items(i) & vbNewLine & ListBox2.Items(i))
+        Label9.Text = "Identical"
+        Label9.ForeColor = Color.Green
+        LinkLabel1.Visible = False
 
-            If ListBox1.Items(i) = ListBox2.Items(i) Then
-                COMPARE = True
-                Label9.Text = "Identical"
-                Label9.ForeColor = Color.Green
-                LinkLabel1.Visible = False
-            Else
+        Dim COMPARE = True
+        For i = 0 To Math.Min(ListBox1.Items.Count, ListBox2.Items.Count) - 1
+            If Not ListBox1.Items(i) = ListBox2.Items(i) Then
                 COMPARE = False
                 Label9.Text = "Different"
                 Label9.ForeColor = Color.Red
