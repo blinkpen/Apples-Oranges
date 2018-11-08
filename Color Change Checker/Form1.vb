@@ -7,6 +7,7 @@ Public Class Form1
     Dim pixelIndex2 As Integer = -1
     Dim COMPARE As Boolean
     Dim T3 As Integer = 0
+    Dim screengit As Integer = 12
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Form2.Left = PictureBox2.Left
@@ -20,6 +21,8 @@ Public Class Form1
         AdjustWindows()
         Form2.BringToFront()
         Form3.BringToFront()
+        PictureBox3.Left = Panel1.Left
+        PictureBox4.Left = Panel2.Left
     End Sub
 
     Private Sub AdjustWindows()
@@ -44,19 +47,30 @@ Public Class Form1
         Form3.BringToFront()
         PictureBox3.Left = Panel1.Left
         PictureBox4.Left = Panel2.Left
+
+        screengit = TextBox5.Text
+        Form2.Panel1.Left = TextBox5.Text
+        Form2.Panel1.Top = TextBox5.Text
+        Form2.Width = screengit * 2 + Form2.Panel1.Width
+        Form2.Height = screengit * 2 + Form2.Panel1.Height
+
+        Form3.Panel1.Left = TextBox5.Text
+        Form3.Panel1.Top = TextBox5.Text
+        Form3.Width = screengit * 2 + Form3.Panel1.Width
+        Form3.Height = screengit * 2 + Form3.Panel1.Height
     End Sub
 
     Private Sub GetScreen1()
         Dim pic As Bitmap = New Bitmap(Form2.Panel1.Width, Form2.Panel1.Height)
         Dim gfx As Graphics = Graphics.FromImage(pic)
-        gfx.CopyFromScreen(New Point(Form2.Location.X + 12, Form2.Location.Y + 12), New Point(0, 0), pic.Size)
+        gfx.CopyFromScreen(New Point(Form2.Location.X + screengit, Form2.Location.Y + screengit), New Point(0, 0), pic.Size)
         Panel1.BackgroundImage = pic
     End Sub
 
     Private Sub GetScreen2()
         Dim pic As Bitmap = New Bitmap(Form3.Panel1.Width, Form3.Panel1.Height)
         Dim gfx As Graphics = Graphics.FromImage(pic)
-        gfx.CopyFromScreen(New Point(Form3.Location.X + 12, Form3.Location.Y + 12), New Point(0, 0), pic.Size)
+        gfx.CopyFromScreen(New Point(Form3.Location.X + screengit, Form3.Location.Y + screengit), New Point(0, 0), pic.Size)
         Panel2.BackgroundImage = pic
     End Sub
 
@@ -66,12 +80,21 @@ Public Class Form1
         ListBox1.Items.Clear()
         ListBox2.Items.Clear()
 
+
+        'For i = 1 To Math.Min(Panel1.Width, Panel1.Height)
+        '    Dim curPixColor As Color = image1.GetPixel(i - 1, i - 1)
+        '    ListBox1.Items.Add(curPixColor.ToArgb)
+        'Next
+
+        'For i = 1 To Math.Min(Panel2.Width, Panel2.Height)
+        '    Dim curPixColor2 As Color = image2.GetPixel(i - 1, i - 1)
+        '    ListBox2.Items.Add(curPixColor2.ToArgb)
+        'Next
+
+
         For x = 1 To Panel1.Width
             For y = 1 To Panel1.Height
                 Dim curPixColor As Color = image1.GetPixel(x - 1, y - 1)
-                'Dim pixel1A As String = curPixColor.ToArgb
-                'Dim pixel1B As String = pixel1A.Replace("-", "")
-                'Dim pixel1C As Integer = pixel1B
                 ListBox1.Items.Add(curPixColor.ToArgb)
             Next
         Next
@@ -79,12 +102,11 @@ Public Class Form1
         For x = 1 To Panel2.Width
             For y = 1 To Panel2.Height
                 Dim curPixColor2 As Color = image2.GetPixel(x - 1, y - 1)
-                'Dim pixel2A As String = curPixColor2.ToArgb
-                'Dim pixel2B As String = pixel2A.Replace("-", "")
-                'Dim pixel2C As Integer = pixel2B
                 ListBox2.Items.Add(curPixColor2.ToArgb)
             Next
         Next
+
+
 
         Label5.Text = ListBox1.Items.Count & " pixels generated"
         Label6.Text = ListBox2.Items.Count & " pixels generated"
@@ -137,6 +159,7 @@ Public Class Form1
                 Exit For
             End If
         Next
+        Return 0
     End Function
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -194,4 +217,11 @@ Public Class Form1
 
     End Sub
 
+
+    Private Sub CheckBox1_MouseClick(sender As Object, e As MouseEventArgs) Handles CheckBox1.MouseClick
+        If Panel1.Width > 50 Or Panel1.Height > 50 Then
+            CheckBox1.Checked = False
+            MsgBox("It is not recommended to run this for images exceeding widths and/or heights of 50 pixels." & vbNewLine & "This process has been aborted.")
+        End If
+    End Sub
 End Class

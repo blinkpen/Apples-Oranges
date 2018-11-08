@@ -28,6 +28,9 @@ Partial Class Form1
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -68,9 +71,9 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(9, 71)
+        Me.Button1.Location = New System.Drawing.Point(5, 97)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(120, 23)
+        Me.Button1.Size = New System.Drawing.Size(124, 23)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "Update"
         Me.Button1.UseVisualStyleBackColor = True
@@ -93,6 +96,9 @@ Partial Class Form1
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label11)
+        Me.GroupBox1.Controls.Add(Me.Label10)
+        Me.GroupBox1.Controls.Add(Me.TextBox5)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -102,10 +108,36 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(140, 100)
+        Me.GroupBox1.Size = New System.Drawing.Size(140, 129)
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Size"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(2, 74)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(37, 13)
+        Me.Label11.TabIndex = 24
+        Me.Label11.Text = "border"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(111, 78)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(18, 13)
+        Me.Label10.TabIndex = 23
+        Me.Label10.Text = "px"
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Location = New System.Drawing.Point(44, 71)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(60, 20)
+        Me.TextBox5.TabIndex = 22
+        Me.TextBox5.Text = "12"
         '
         'Label4
         '
@@ -147,7 +179,7 @@ Partial Class Form1
         '
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Location = New System.Drawing.Point(12, 292)
+        Me.Panel1.Location = New System.Drawing.Point(158, 291)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(20, 20)
         Me.Panel1.TabIndex = 5
@@ -156,7 +188,7 @@ Partial Class Form1
         '
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Location = New System.Drawing.Point(38, 292)
+        Me.Panel2.Location = New System.Drawing.Point(184, 291)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(20, 20)
         Me.Panel2.TabIndex = 6
@@ -280,7 +312,7 @@ Partial Class Form1
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(12, 118)
+        Me.Button2.Location = New System.Drawing.Point(12, 147)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(140, 23)
         Me.Button2.TabIndex = 10
@@ -289,7 +321,7 @@ Partial Class Form1
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(12, 147)
+        Me.Button3.Location = New System.Drawing.Point(12, 176)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(140, 23)
         Me.Button3.TabIndex = 11
@@ -300,7 +332,7 @@ Partial Class Form1
         '
         Me.LinkLabel1.AutoSize = True
         Me.LinkLabel1.LinkColor = System.Drawing.Color.Red
-        Me.LinkLabel1.Location = New System.Drawing.Point(11, 186)
+        Me.LinkLabel1.Location = New System.Drawing.Point(11, 215)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(134, 13)
         Me.LinkLabel1.TabIndex = 14
@@ -311,7 +343,7 @@ Partial Class Form1
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(11, 173)
+        Me.Label9.Location = New System.Drawing.Point(11, 202)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(38, 13)
         Me.Label9.TabIndex = 15
@@ -324,7 +356,7 @@ Partial Class Form1
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(12, 202)
+        Me.CheckBox1.Location = New System.Drawing.Point(12, 231)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(95, 17)
         Me.CheckBox1.TabIndex = 17
@@ -334,7 +366,7 @@ Partial Class Form1
         'CheckBox2
         '
         Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(12, 225)
+        Me.CheckBox2.Location = New System.Drawing.Point(12, 254)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(97, 17)
         Me.CheckBox2.TabIndex = 18
@@ -350,7 +382,7 @@ Partial Class Form1
         Me.PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), System.Drawing.Image)
         Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox3.Location = New System.Drawing.Point(12, 265)
+        Me.PictureBox3.Location = New System.Drawing.Point(158, 264)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(21, 21)
         Me.PictureBox3.TabIndex = 19
@@ -361,7 +393,7 @@ Partial Class Form1
         Me.PictureBox4.BackgroundImage = CType(resources.GetObject("PictureBox4.BackgroundImage"), System.Drawing.Image)
         Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.PictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox4.Location = New System.Drawing.Point(38, 265)
+        Me.PictureBox4.Location = New System.Drawing.Point(184, 264)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(21, 21)
         Me.PictureBox4.TabIndex = 20
@@ -385,6 +417,7 @@ Partial Class Form1
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
+        Me.DoubleBuffered = True
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(912, 446)
         Me.Name = "Form1"
@@ -439,4 +472,7 @@ Partial Class Form1
     Friend WithEvents Timer3 As Timer
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label10 As Label
 End Class

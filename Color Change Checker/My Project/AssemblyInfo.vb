@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Color Change Checker")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("Color Change Checker")>
-<Assembly: AssemblyCopyright("Copyright ©  2018")>
+<Assembly: AssemblyTitle("Apples & Oranges")>
+<Assembly: AssemblyDescription("Compares 2 Images and verify matches")>
+<Assembly: AssemblyCompany("WizTech")>
+<Assembly: AssemblyProduct("Apples & Oranges")>
+<Assembly: AssemblyCopyright("Copyright © WizTech 2018")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
