@@ -51,21 +51,15 @@ Partial Class Form1
         Me.Button3 = New System.Windows.Forms.Button()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.ListBox3 = New System.Windows.Forms.ListBox()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.ListBox4 = New System.Windows.Forms.ListBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
@@ -319,14 +313,6 @@ Partial Class Form1
         Me.Label9.TabIndex = 15
         Me.Label9.Text = "Ready"
         '
-        'ListBox3
-        '
-        Me.ListBox3.FormattingEnabled = True
-        Me.ListBox3.Location = New System.Drawing.Point(496, 283)
-        Me.ListBox3.Name = "ListBox3"
-        Me.ListBox3.Size = New System.Drawing.Size(231, 173)
-        Me.ListBox3.TabIndex = 16
-        '
         'Timer2
         '
         Me.Timer2.Interval = 1
@@ -351,55 +337,17 @@ Partial Class Form1
         Me.CheckBox2.Text = "Hide Detectors"
         Me.CheckBox2.UseVisualStyleBackColor = True
         '
-        'ListBox4
+        'Timer3
         '
-        Me.ListBox4.FormattingEnabled = True
-        Me.ListBox4.Location = New System.Drawing.Point(733, 283)
-        Me.ListBox4.Name = "ListBox4"
-        Me.ListBox4.Size = New System.Drawing.Size(233, 173)
-        Me.ListBox4.TabIndex = 19
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox3.Location = New System.Drawing.Point(892, 12)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(100, 100)
-        Me.PictureBox3.TabIndex = 20
-        Me.PictureBox3.TabStop = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.PictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox4.Location = New System.Drawing.Point(998, 12)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(100, 100)
-        Me.PictureBox4.TabIndex = 21
-        Me.PictureBox4.TabStop = False
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(1017, 202)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 22
-        Me.Button4.Text = "Button4"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.Timer3.Interval = 1
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1121, 488)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.PictureBox4)
-        Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.ListBox4)
+        Me.ClientSize = New System.Drawing.Size(896, 407)
         Me.Controls.Add(Me.CheckBox2)
         Me.Controls.Add(Me.CheckBox1)
-        Me.Controls.Add(Me.ListBox3)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.Button3)
@@ -410,7 +358,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MinimumSize = New System.Drawing.Size(907, 342)
+        Me.MinimumSize = New System.Drawing.Size(912, 446)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Apples & Oranges"
@@ -424,8 +372,6 @@ Partial Class Form1
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -457,12 +403,8 @@ Partial Class Form1
     Friend WithEvents Label8 As Label
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents Label9 As Label
-    Friend WithEvents ListBox3 As ListBox
     Friend WithEvents Timer2 As Timer
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents CheckBox2 As CheckBox
-    Friend WithEvents ListBox4 As ListBox
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents Button4 As Button
+    Friend WithEvents Timer3 As Timer
 End Class
