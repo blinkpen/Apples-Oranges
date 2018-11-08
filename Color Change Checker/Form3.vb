@@ -3,7 +3,7 @@
     Dim ypos As New Integer
     Dim pos As New Point
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Me.BringToFront()
     End Sub
 
     Private Sub Panel2_MouseDown(sender As Object, e As MouseEventArgs) Handles Panel2.MouseDown

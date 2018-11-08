@@ -9,7 +9,7 @@ Public Class Form1
     Dim T3 As Integer = 0
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Form2.Left = Panel1.Left
+        Form2.Left = PictureBox2.Left
         Form2.Top = Panel1.Top
         Form2.Show()
         Form3.Show()
@@ -18,6 +18,8 @@ Public Class Form1
         Form3.Panel1.Width = TextBox1.Text
         Form3.Panel1.Height = TextBox2.Text
         AdjustWindows()
+        Form2.BringToFront()
+        Form3.BringToFront()
     End Sub
 
     Private Sub AdjustWindows()
@@ -40,6 +42,8 @@ Public Class Form1
         AdjustWindows()
         Form2.BringToFront()
         Form3.BringToFront()
+        PictureBox3.Left = Panel1.Left
+        PictureBox4.Left = Panel2.Left
     End Sub
 
     Private Sub GetScreen1()
@@ -189,4 +193,5 @@ Public Class Form1
         End If
 
     End Sub
+
 End Class

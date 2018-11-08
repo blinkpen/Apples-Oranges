@@ -37,7 +37,7 @@ Partial Class Form2
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.Gray
+        Me.Panel2.BackColor = System.Drawing.Color.Red
         Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
