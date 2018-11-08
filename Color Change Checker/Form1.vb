@@ -60,6 +60,7 @@ Public Class Form1
         gfx.CopyFromScreen(New Point(Form2.Location.X + 12, Form2.Location.Y + 12), New Point(0, 0), pic.Size)
 
         Panel1.BackgroundImage = pic
+
     End Sub
 
     Private Sub GetScreen2()
@@ -69,23 +70,24 @@ Public Class Form1
         gfx.CopyFromScreen(New Point(Form3.Location.X + 12, Form3.Location.Y + 12), New Point(0, 0), pic.Size)
 
         Panel2.BackgroundImage = pic
+
     End Sub
-
-
-
 
     Private Sub GenPixels()
         Dim image1 As New Bitmap(Panel1.BackgroundImage)
         Dim image2 As New Bitmap(Panel2.BackgroundImage)
         ListBox1.Items.Clear()
         ListBox2.Items.Clear()
-        Dim painting As New Bitmap(20, 20)
-        Dim painting2 As New Bitmap(20, 20)
+        'Dim painting As New Bitmap(20, 20)
+        'Dim painting2 As New Bitmap(20, 20)
 
         For x = 1 To Panel1.Width
             For y = 1 To Panel1.Height
                 Dim curPixColor As Color = image1.GetPixel(x - 1, y - 1)
-                ListBox1.Items.Add(curPixColor.ToArgb)
+                Dim pixel1A As String = curPixColor.ToArgb
+                Dim pixel1B As String = pixel1A.Replace("-", "")
+                Dim pixel1C As Integer = pixel1B
+                ListBox1.Items.Add(pixel1C)
 
                 'Dim curPixColor3 As Color = image1.GetPixel(x - 1, y - 1)
 
@@ -98,7 +100,10 @@ Public Class Form1
         For x = 1 To Panel2.Width
             For y = 1 To Panel2.Height
                 Dim curPixColor2 As Color = image2.GetPixel(x - 1, y - 1)
-                ListBox2.Items.Add(curPixColor2.ToArgb)
+                Dim pixel2A As String = curPixColor2.ToArgb
+                Dim pixel2B As String = pixel2A.Replace("-", "")
+                Dim pixel2C As Integer = pixel2B
+                ListBox2.Items.Add(pixel2C)
 
                 'Dim curPixColor4 As Color = image2.GetPixel(x - 1, y - 1)
 
@@ -202,43 +207,64 @@ Public Class Form1
 #End Region
 
     Private Function Loopy()
-        Dim s As String
-        Dim builder As New StringBuilder
-        For Each item In ListBox1.Items
 
-            builder.Append(item)
-            s = builder.ToString
+        For i = 0 To Math.Min(ListBox1.Items.Count, ListBox2.Items.Count) - 1
+            'MsgBox(ListBox1.Items(i) & vbNewLine & ListBox2.Items(i))
+
+            If ListBox1.Items(i) = ListBox2.Items(i) Then
+                COMPARE = True
+                Label9.Text = "Identical"
+                Label9.ForeColor = Color.Green
+                LinkLabel1.Visible = False
+            Else
+                COMPARE = False
+                Label9.Text = "Different"
+                Label9.ForeColor = Color.Red
+                LinkLabel1.Visible = True
+                pixelIndex = ListBox1.Items.IndexOf(ListBox1.Items(i))
+                pixelIndex2 = ListBox2.Items.IndexOf(ListBox2.Items(i))
+                Exit For
+            End If
         Next
 
 
-        Dim s2 As String
-        Dim builder2 As New StringBuilder
-        For Each item2 In ListBox2.Items
+        'Dim s As String
+        'Dim builder As New StringBuilder
+        'For Each item In ListBox1.Items
 
-            builder2.Append(item2)
-            s2 = builder2.ToString
-        Next
+        '    builder.Append(item)
+        '    s = builder.ToString
+        'Next
 
-        If s = s2 Then
-            COMPARE = True
-            Label9.Text = "Identical"
-            Label9.ForeColor = Color.Green
-            LinkLabel1.Visible = False
-        Else
-            COMPARE = False
-            Label9.Text = "Different"
-            Label9.ForeColor = Color.Red
-            LinkLabel1.Visible = True
-        End If
+
+        'Dim s2 As String
+        'Dim builder2 As New StringBuilder
+        'For Each item2 In ListBox2.Items
+
+        '    builder2.Append(item2)
+        '    s2 = builder2.ToString
+        'Next
+
+        'If s = s2 Then
+        '    COMPARE = True
+        '    Label9.Text = "Identical"
+        '    Label9.ForeColor = Color.Green
+        '    LinkLabel1.Visible = False
+        'Else
+        '    COMPARE = False
+        '    Label9.Text = "Different"
+        '    Label9.ForeColor = Color.Red
+        '    LinkLabel1.Visible = True
+        'End If
     End Function
 
 
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        If COMPARE = False Then
-            COMPARE = True
+        'If COMPARE = False Then
+        '    COMPARE = True
 
-        End If
+        'End If
 
         Loopy()
 
@@ -276,8 +302,16 @@ Public Class Form1
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         ListBox1.SelectedIndex = -1
         ListBox2.SelectedIndex = -1
-        ListBox1.SelectedIndex = pixelIndex
-        ListBox2.SelectedIndex = pixelIndex2
+
+        Dim winningPixelIndex As Integer
+        If pixelIndex > pixelIndex2 Then
+            winningPixelIndex = pixelIndex
+        Else
+            winningPixelIndex = pixelIndex2
+        End If
+
+        ListBox1.SelectedIndex = winningPixelIndex
+        ListBox2.SelectedIndex = winningPixelIndex
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged

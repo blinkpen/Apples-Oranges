@@ -12,3 +12,17 @@ F:\Color Change Checker\Color Change Checker\obj\Debug\Color Change Checker.xml
 F:\Color Change Checker\Color Change Checker\obj\Debug\Color Change Checker.pdb
 F:\Color Change Checker\Color Change Checker\obj\Debug\Color_Change_Checker.Form2.resources
 F:\Color Change Checker\Color Change Checker\obj\Debug\Color_Change_Checker.Form3.resources
+F:\Apples-Oranges\Color Change Checker\bin\Debug\Color Change Checker.exe.config
+F:\Apples-Oranges\Color Change Checker\bin\Debug\Color Change Checker.exe
+F:\Apples-Oranges\Color Change Checker\bin\Debug\Color Change Checker.pdb
+F:\Apples-Oranges\Color Change Checker\bin\Debug\Color Change Checker.xml
+F:\Apples-Oranges\Color Change Checker\obj\Debug\Color Change Checker.vbprojAssemblyReference.cache
+F:\Apples-Oranges\Color Change Checker\obj\Debug\Color_Change_Checker.Form1.resources
+F:\Apples-Oranges\Color Change Checker\obj\Debug\Color_Change_Checker.Form2.resources
+F:\Apples-Oranges\Color Change Checker\obj\Debug\Color_Change_Checker.Form3.resources
+F:\Apples-Oranges\Color Change Checker\obj\Debug\Color_Change_Checker.Resources.resources
+F:\Apples-Oranges\Color Change Checker\obj\Debug\Color Change Checker.vbproj.GenerateResource.cache
+F:\Apples-Oranges\Color Change Checker\obj\Debug\Color Change Checker.vbproj.CoreCompileInputs.cache
+F:\Apples-Oranges\Color Change Checker\obj\Debug\Color Change Checker.exe
+F:\Apples-Oranges\Color Change Checker\obj\Debug\Color Change Checker.xml
+F:\Apples-Oranges\Color Change Checker\obj\Debug\Color Change Checker.pdb
