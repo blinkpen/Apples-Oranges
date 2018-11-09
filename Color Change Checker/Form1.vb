@@ -13,7 +13,6 @@ Public Class Form1
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Form2.Left = PictureBox2.Left
         Form2.Top = Panel1.Top
         Form2.Show()
         Form3.Show()
@@ -26,7 +25,10 @@ Public Class Form1
         Form3.BringToFront()
         PictureBox3.Left = Panel1.Left
         PictureBox4.Left = Panel2.Left
-
+        Form2.Left = Me.Left + 250
+        Form2.Top = Me.Top + 300
+        Form3.Left = Form2.Left + Form2.Width + 7
+        Form3.Top = Form2.Top
     End Sub
 
     Private Sub AdjustWindows()
