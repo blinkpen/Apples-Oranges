@@ -8,6 +8,9 @@ Public Class Form1
     Dim COMPARE As Boolean
     Dim T3 As Integer = 0
     Dim screengit As Integer = 12
+    Dim IM1MOVE As Integer = 1
+    Dim IM2MOVE As Integer = 1
+
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Form2.Left = PictureBox2.Left
@@ -23,6 +26,7 @@ Public Class Form1
         Form3.BringToFront()
         PictureBox3.Left = Panel1.Left
         PictureBox4.Left = Panel2.Left
+
     End Sub
 
     Private Sub AdjustWindows()
@@ -35,6 +39,12 @@ Public Class Form1
         Panel2.Width = TextBox1.Text
         Panel2.Height = TextBox2.Text
         Panel2.Left = Panel1.Left + Panel1.Width + 7
+        PictureBox3.Width = Panel1.Width
+        PictureBox4.Width = Panel2.Width
+        If Panel2.Width <= 20 Then
+            Panel2.Left = 184
+            PictureBox4.Left = Panel2.Left
+        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -58,6 +68,8 @@ Public Class Form1
         Form3.Panel1.Top = TextBox5.Text
         Form3.Width = screengit * 2 + Form3.Panel1.Width
         Form3.Height = screengit * 2 + Form3.Panel1.Height
+
+
     End Sub
 
     Private Sub GetScreen1()
@@ -91,6 +103,24 @@ Public Class Form1
         '    ListBox2.Items.Add(curPixColor2.ToArgb)
         'Next
 
+
+        'For i = 1 To image1.Width * image1.Height
+        '    Dim x = i / image1.Width
+        '    Dim y = i / image1.Width
+        '    'ListBox1.Items.Add(x)
+        '    Dim curPixColor As Color = image1.GetPixel(x, y)
+        '    ListBox1.Items.Add(curPixColor.ToArgb)
+        'Next
+
+        'For i = 1 To (image1.Width * image1.Height)
+        '    Dim x As Integer = i Mod image1.Width
+        '    Dim y As Integer = i
+        '    'ListBox1.Items.Add(x & ", " & y)
+        '    'TextBox6.Text = TextBox6.Text & x & ", " & y & vbNewLine
+
+        '    Dim curPixColor As Color = image1.GetPixel(x, y)
+        '    ListBox1.Items.Add(curPixColor.ToArgb)
+        'Next
 
         For x = 1 To Panel1.Width
             For y = 1 To Panel1.Height
@@ -223,5 +253,45 @@ Public Class Form1
             CheckBox1.Checked = False
             MsgBox("It is not recommended to run this for images exceeding widths and/or heights of 50 pixels." & vbNewLine & "This process has been aborted.")
         End If
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Form2.Top = Form2.Top - IM1MOVE
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Form2.Top = Form2.Top + IM1MOVE
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Form2.Left = Form2.Left - IM1MOVE
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Form2.Left = Form2.Left + IM1MOVE
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        Form3.Top = Form3.Top - IM2MOVE
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        Form3.Top = Form3.Top + IM2MOVE
+    End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        Form3.Left = Form3.Left - IM2MOVE
+    End Sub
+
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+        Form3.Left = Form3.Left + IM2MOVE
+    End Sub
+
+    Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
+        IM1MOVE = NumericUpDown1.Value
+    End Sub
+
+    Private Sub NumericUpDown2_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown2.ValueChanged
+        IM2MOVE = NumericUpDown2.Value
     End Sub
 End Class
