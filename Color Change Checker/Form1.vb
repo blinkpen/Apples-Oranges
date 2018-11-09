@@ -312,4 +312,12 @@ Public Class Form1
     Private Sub NumericUpDown2_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown2.ValueChanged
         IM2MOVE = NumericUpDown2.Value
     End Sub
+
+    Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox3.CheckedChanged
+        If CheckBox1.Checked = True Then
+            Me.TopMost = True
+        Else
+            Me.TopMost = False
+        End If
+    End Sub
 End Class
