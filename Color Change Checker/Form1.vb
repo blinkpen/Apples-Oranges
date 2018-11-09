@@ -244,7 +244,6 @@ Public Class Form1
         Else
             T3 = T3 + 1
             Label9.Visible = False
-
             If T3 = 5 Then
                 Label9.Visible = True
                 Timer3.Stop()
