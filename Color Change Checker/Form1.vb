@@ -10,7 +10,7 @@ Public Class Form1
     Dim screengit As Integer = 12
     Dim IM1MOVE As Integer = 1
     Dim IM2MOVE As Integer = 1
-
+    Dim detectorHidden As Boolean = False
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Form2.Top = Panel1.Top
@@ -259,8 +259,15 @@ Public Class Form1
     Private Sub CheckBox1_MouseClick(sender As Object, e As MouseEventArgs) Handles CheckBox1.MouseClick
         If CheckBox1.Checked = False Then
         Else
+
             If Panel1.Width > 50 Or Panel1.Height > 50 Then
                 CheckBox1.Checked = False
+                If CheckBox2.Checked = False Then
+                    detectorHidden = False
+                    CheckBox2.Checked = True
+                Else
+                    detectorHidden = True
+                End If
                 Dim result As Integer = MessageBox.Show("It is not recommended to run this for images exceeding widths and/or heights of 50 pixels. Do you wish to run this operation anyway?", "Warning", MessageBoxButtons.YesNoCancel)
                 If result = DialogResult.Cancel Then
 
@@ -269,7 +276,9 @@ Public Class Form1
                 ElseIf result = DialogResult.Yes Then
                     CheckBox1.Checked = True
                 End If
-                'MsgBox("It is not recommended to run this for images exceeding widths and/or heights of 50 pixels." & vbNewLine & "This process has been aborted.")
+                If detectorHidden = False Then
+                    CheckBox2.Checked = False
+                End If
             End If
         End If
 
