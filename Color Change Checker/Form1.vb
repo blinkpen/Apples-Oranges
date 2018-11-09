@@ -68,8 +68,6 @@ Public Class Form1
         Form3.Panel1.Top = TextBox5.Text
         Form3.Width = screengit * 2 + Form3.Panel1.Width
         Form3.Height = screengit * 2 + Form3.Panel1.Height
-
-
     End Sub
 
     Private Sub GetScreen1()
@@ -77,6 +75,7 @@ Public Class Form1
         Dim gfx As Graphics = Graphics.FromImage(pic)
         gfx.CopyFromScreen(New Point(Form2.Location.X + screengit, Form2.Location.Y + screengit), New Point(0, 0), pic.Size)
         Panel1.BackgroundImage = pic
+        gfx.Dispose()
     End Sub
 
     Private Sub GetScreen2()
@@ -84,6 +83,7 @@ Public Class Form1
         Dim gfx As Graphics = Graphics.FromImage(pic)
         gfx.CopyFromScreen(New Point(Form3.Location.X + screengit, Form3.Location.Y + screengit), New Point(0, 0), pic.Size)
         Panel2.BackgroundImage = pic
+        gfx.Dispose()
     End Sub
 
     Private Sub GenPixels()
@@ -212,8 +212,16 @@ Public Class Form1
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         If CheckBox1.Checked = True Then
             Timer2.Start()
+            TextBox1.Enabled = False
+            TextBox2.Enabled = False
+            TextBox5.Enabled = False
+            Button1.Enabled = False
         Else
             Timer2.Stop()
+            TextBox1.Enabled = True
+            TextBox2.Enabled = True
+            TextBox5.Enabled = True
+            Button1.Enabled = True
         End If
     End Sub
 
@@ -249,10 +257,22 @@ Public Class Form1
 
 
     Private Sub CheckBox1_MouseClick(sender As Object, e As MouseEventArgs) Handles CheckBox1.MouseClick
-        If Panel1.Width > 50 Or Panel1.Height > 50 Then
-            CheckBox1.Checked = False
-            MsgBox("It is not recommended to run this for images exceeding widths and/or heights of 50 pixels." & vbNewLine & "This process has been aborted.")
+        If CheckBox1.Checked = False Then
+        Else
+            If Panel1.Width > 50 Or Panel1.Height > 50 Then
+                CheckBox1.Checked = False
+                Dim result As Integer = MessageBox.Show("It is not recommended to run this for images exceeding widths and/or heights of 50 pixels. Do you wish to run this operation anyway?", "Warning", MessageBoxButtons.YesNoCancel)
+                If result = DialogResult.Cancel Then
+
+                ElseIf result = DialogResult.No Then
+
+                ElseIf result = DialogResult.Yes Then
+                    CheckBox1.Checked = True
+                End If
+                'MsgBox("It is not recommended to run this for images exceeding widths and/or heights of 50 pixels." & vbNewLine & "This process has been aborted.")
+            End If
         End If
+
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
