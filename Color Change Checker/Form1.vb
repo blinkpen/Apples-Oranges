@@ -174,7 +174,6 @@ Public Class Form1
         Label9.Text = "Identical"
         Label9.ForeColor = Color.Green
         LinkLabel1.Visible = False
-
         Dim COMPARE = True
         pixelIndex = -1
         pixelIndex2 = -1
